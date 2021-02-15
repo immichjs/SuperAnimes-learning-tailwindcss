@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** Criar novas classes **/
+@layer utilities {
+    .scale-1015 {
+        transform: scale(1.015)
+    }
+
+    .outline-hidden {
+        outline: none;
+    }
+
+    .box-shadow-default {
+        box-shadow: 0px 0px 10px -8px rgba(0, 0, 0, .2);
+    }
+
+    .no-draggable {
+        -webkit-user-drag: none;
+    }
+}
+
+/** CSS Base **/
+* {
+    @apply box-border m-0 p-0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/** HEADER **/
+.header {
+    @apply flex box-border justify-between items-center relative py-0 xl:px-52 lg:px-8 h-20;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0 , .2);
+}
+
+.header__logo {
+    @apply w-60 cursor-pointer select-none no-draggable;
+}
+
+.header__navegation___list {
+    @apply flex;
+}
+ 
+.header__navegation___list____item a {
+    @apply p-4 duration-200 rounded mr-4 font-semibold text-gray-500 select-none;
+}
+
+.header__navegation___list____item a:hover {
+    @apply bg-yellow-300 text-white; 
+}
+
+.drawing-list a {
+    margin-right: 0;
+}
+
+.home, .releases,
+.anime-list, .drawing-list, .administrator {
+    @apply duration-300;
+}
+
+.home:hover, .releases:hover,
+.anime-list:hover, .drawing-list:hover .administrator:hover {
+    @apply transform translate-y-0.5;
+}
+
+/** MAIN **/
+.main {
+    background: rgba(0, 0, 0, 0.015);
+}
+
+.main__search {
+    @apply grid justify-center py-10 xl:px-52 lg:px-8 box-border;
+    grid-template-columns: calc(100% - 100px) 100px;
+}
+
+.main__search-bar {
+    @apply p-4 rounded bg-white border mr-1.5 duration-200 box-border outline-hidden box-shadow-default;
+}
+
+.main__search-bar::placeholder {
+    @apply font-semibold text-sm text-gray-500;
+}
+
+.main__search___button {
+    @apply rounded cursor-pointer bg-white border duration-200 font-semibold box-shadow-default;
+}
+
+.main__search___button:hover {
+    @apply bg-yellow-300 text-white;
+}
+
+.changecolor-border {
+    @apply border border-dashed border-yellow-300;
+}
+
+.main__last-releases {
+    @apply grid xl:mx-52 lg:mx-8 box-border rounded-md px-2 bg-white box-shadow-default; 
+    grid-template-areas: 
+        'title'
+        'thumb';
+}
+
+.main__last-releases___title {
+    @apply justify-self-start text-lg py-4 pl-3 font-semibold box-border text-gray-500;
+    grid-area: title;
+}
+.main__last-releases___thumbs {
+    @apply grid grid-cols-4 box-border gap-x-2;
+    grid-template-areas:
+    'image image image image',
+    'desc desc desc desc';
+    grid-area: thumb;
+}
+
+.main__last-releases___thumbs____content {
+    @apply cursor-pointer text-center box-border duration-200;
+}
+
+.main__last-releases___thumbs____content:hover {
+    @apply transform scale-1015;
+}
+    
+.main__last-releases___thumbs____content img {
+    @apply w-full box-border rounded-md object-cover no-draggable;
+    height: 403px;
+    min-height: auto;
+    grid-area: image;
+}
+    
+.main__last-releases___thumbs____content_____title {
+    @apply p-5 font-semibold tracking-wide text-base box-border duration-200 text-gray-500;
+    grid-area: desc;
+}
+
+.main__last-releases___thumbs____content_____title-text {
+    @apply duration-200;
+}
+
+.main__last-releases___thumbs____content_____title-text:hover {
+    @apply text-yellow-300;
+}
+
+/** FOOTER **/
+.footer, .footer p {
+    @apply text-center mt-10 text-xs;
+}
