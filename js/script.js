@@ -6,7 +6,7 @@ const thumbs = document.querySelector('.main__last-releases___thumbs img')
 const changeColorToggle = () => {
     searchBar.classList.toggle('changecolor-border')
 }
-searchBar.addEventListener('click', changeColorToggle)
+searchBar.addEventListener('focus', changeColorToggle)
 searchBar.addEventListener('focusout', changeColorToggle)
 
 
