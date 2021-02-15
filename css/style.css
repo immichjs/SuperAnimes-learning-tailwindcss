@@ -32,7 +32,7 @@ body {
 
 /** HEADER **/
 .header {
-    @apply flex box-border justify-between items-center relative py-0 xl:px-52 lg:px-8 h-20;
+    @apply flex box-border justify-between items-center relative py-0 xl:px-52 lg:px-8 h-20 sm:px-3.5;
     box-shadow: 0px 0px 10px -5px rgba(0, 0, 0 , .2);
 }
 
@@ -52,7 +52,7 @@ body {
     @apply bg-yellow-300 text-white; 
 }
 
-.drawing-list a {
+.administrator a {
     margin-right: 0;
 }
 
@@ -68,11 +68,11 @@ body {
 
 /** MAIN **/
 .main {
-    background: rgba(0, 0, 0, 0.015);
+    background: rgba(0, 0, 0, .015);
 }
 
 .main__search {
-    @apply grid justify-center py-10 xl:px-52 lg:px-8 box-border;
+    @apply grid justify-center py-10 xl:mx-52 lg:mx-8 box-border sm:mx-3.5;
     grid-template-columns: calc(100% - 100px) 100px;
 }
 
@@ -97,23 +97,23 @@ body {
 }
 
 .main__last-releases {
-    @apply grid xl:mx-52 lg:mx-8 box-border rounded-md px-2 bg-white box-shadow-default; 
+    @apply grid sm:mx-3.5 xl:mx-52 lg:mx-8 box-border rounded-md px-2 bg-white box-shadow-default; 
     grid-template-areas: 
         'title'
         'thumb';
 }
 
 .main__last-releases___title {
-    @apply justify-self-start text-lg py-4 pl-3 font-semibold box-border text-gray-500;
+    @apply justify-self-start text-lg py-4 px-3 font-semibold box-border text-gray-500;
     grid-area: title;
 }
 .main__last-releases___thumbs {
-    @apply grid grid-cols-4 box-border gap-x-2;
+    @apply grid  md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-4 box-border gap-x-2;
     grid-area: thumb;
 }
 
 .main__last-releases___thumbs____content {
-    @apply cursor-pointer text-center box-border duration-200;
+    @apply cursor-pointer text-center box-border duration-200 box-shadow-default;
 }
 
 .main__last-releases___thumbs____content:hover {
@@ -145,14 +145,8 @@ body {
     @apply text-center mt-10 text-xs;
 }
 
-/** MEDIA QUERIES **/
-@media only screen and (max-width: 1024px) {
-    .main__last-releases___thumbs {
-        @apply grid-cols-2;
-    }
-
-    .main__last-releases___thumbs:nth-child(3),
-    .main__last-releases___thumbs:nth-child(4) {
+@media screen and (max-width: 978px) {
+    .header__navegation {
         display: none;
     }
 }
