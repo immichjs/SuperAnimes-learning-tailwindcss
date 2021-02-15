@@ -45,7 +45,7 @@ body {
 }
  
 .header__navegation___list____item a {
-    @apply p-4 duration-200 rounded mr-4 font-semibold text-gray-500 select-none;
+    @apply p-4 duration-200 rounded xl:mr-0.5 mr-2 font-semibold text-gray-500 select-none;
 }
 
 .header__navegation___list____item a:hover {
@@ -109,9 +109,6 @@ body {
 }
 .main__last-releases___thumbs {
     @apply grid grid-cols-4 box-border gap-x-2;
-    grid-template-areas:
-    'image image image image',
-    'desc desc desc desc';
     grid-area: thumb;
 }
 
@@ -146,4 +143,16 @@ body {
 /** FOOTER **/
 .footer, .footer p {
     @apply text-center mt-10 text-xs;
+}
+
+/** MEDIA QUERIES **/
+@media only screen and (max-width: 1024px) {
+    .main__last-releases___thumbs {
+        @apply grid-cols-2;
+    }
+
+    .main__last-releases___thumbs:nth-child(3),
+    .main__last-releases___thumbs:nth-child(4) {
+        display: none;
+    }
 }

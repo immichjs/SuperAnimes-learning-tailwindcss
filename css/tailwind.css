@@ -31254,7 +31254,7 @@ body {
 .header__navegation___list____item a {
   border-radius: 0.25rem;
   font-weight: 600;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   padding: 1rem;
   --tw-text-opacity: 1;
   color: rgba(107, 114, 128, var(--tw-text-opacity));
@@ -31263,6 +31263,12 @@ body {
       -ms-user-select: none;
           user-select: none;
   transition-duration: 200ms;
+}
+
+@media (min-width: 1280px) {
+  .header__navegation___list____item a {
+    margin-right: 0.125rem;
+  }
 }
 
 .header__navegation___list____item a:hover {
@@ -31276,11 +31282,11 @@ body {
   margin-right: 0;
 }
 
-.home, .releases, .anime-list, .drawing-list {
+.home, .releases, .anime-list, .drawing-list, .administrator {
   transition-duration: 300ms;
 }
 
-.home:hover, .releases:hover, .anime-list:hover, .drawing-list:hover {
+.home:hover, .releases:hover, .anime-list:hover, .drawing-list:hover .administrator:hover {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -31437,9 +31443,6 @@ body {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-areas:
-    'image image image image',
-    'desc desc desc desc';
   grid-area: thumb;
 }
 
@@ -31503,6 +31506,19 @@ body {
   line-height: 1rem;
   margin-top: 2.5rem;
   text-align: center;
+}
+
+/** MEDIA QUERIES **/
+
+@media only screen and (max-width: 1024px) {
+  .main__last-releases___thumbs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main__last-releases___thumbs:nth-child(3),
+    .main__last-releases___thumbs:nth-child(4) {
+    display: none;
+  }
 }
 
 @media (min-width: 640px) {
